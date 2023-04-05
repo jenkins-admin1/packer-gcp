@@ -49,6 +49,8 @@ source "googlecompute" "packer-image" {
   disk_size = var.disk_size
   machine_type = "e2-medium"
   communicator ="winrm"
+  winrm_username = "Administrator"
+  winrm_password = "AUTO"
   skip_create_image = var.dry_run
   instance_name = local.instance_name
   image_name = local.image_name
