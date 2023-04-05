@@ -10,7 +10,7 @@ pipeline {
 
         stage('Validate Packer Template') {
             steps {
-                sh "cd /var/lib/jenkins/workspace/packer-gcp/${params.provider}/${params.resource}/${params.environment}/${params.region}/${params.repo_name} && packer validate"
+                sh "cd /var/lib/jenkins/workspace/packer-gcp/${params.provider}/${params.resource}/${params.environment}/${params.region}/${params.repo_name} && packer validate -var-file config.pkr.hcl"
             }
         }
 
