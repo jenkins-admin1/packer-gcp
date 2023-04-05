@@ -8,7 +8,7 @@ variable "zone" {
   default = "us-central1-a"
 }
 
-variable "disk-size" {
+variable "disk_size" {
   type    = number
   default = 400
 }
