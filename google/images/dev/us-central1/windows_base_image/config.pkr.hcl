@@ -65,7 +65,7 @@ source "googlecompute" "packer-image" {
 }
 
 build {
-  sources = ["source.googlecompute.windows2019"]
+  sources = ["source.googlecompute.packer-image"]
 
   provisioner "shell" {
     inline = [
