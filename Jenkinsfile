@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-    GOOGLE_APPLICATION_CREDENTIALS = credentials('prj-dev-app1-1729')
-    }
-
     stages {
         stage('Checkout') {
             steps {
