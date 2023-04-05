@@ -1,13 +1,6 @@
 pipeline {
     agent any
 
-    parameters {
-        string(name: 'provider', defaultValue: 'google', description: 'Do not change)
-        string(name: 'resource', defaultValue: 'images', description: 'Do not change')
-        string(name: 'environment', defaultValue: 'dev', description: 'Environment to deploy to')
-        string(name: 'region', defaultValue: 'us-central1', description: 'Region to deploy to')
-    }
-
     stages {
         stage('Checkout') {
             steps {
