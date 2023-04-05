@@ -17,13 +17,13 @@ pipeline {
 
         stage('Validate Packer Template') {
             steps {
-                sh "cd /var/lib/jenkins/workspace/gcp-project/${params.provider}/${params.resource}/${params.environment}/${params.region} && packer validate"
+                sh "cd /var/lib/jenkins/workspace/gcp-project/${params.provider}/${params.resource}/${params.environment}/${params.region}/${params.repo_name} && packer validate"
             }
         }
 
         stage('Build Image') {
             steps {
-                sh "cd /var/lib/jenkins/workspace/gcp-project/${params.provider}/${params.resource}/${params.environment}/${params.region} && packer build"
+                sh "cd /var/lib/jenkins/workspace/gcp-project/${params.provider}/${params.resource}/${params.environment}/${params.region}/${params.repo_name} && packer build"
             }
         }
 
