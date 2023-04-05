@@ -31,7 +31,8 @@ variable "install_script_url" {
 locals {
     instance_name = "vm-packer-${uuidv4()}"
     packerstarttime = formatdate("YYYY-MM-DD-h'h'mm'ss's", timestamp ())
-    source_image_family = "windows-2019-datacenter"
+    source_image = "windows-server-2019-dc-v20200813"
+    #source_image_family = "windows-2019-datacenter"
     image_family = "${local.source_image_family}-app1"
     image_name = "${local.image_family}-${local.packerstarttime}"
 }
@@ -41,7 +42,8 @@ source "googlecompute" "packer-image" {
   use_internal_ip = true
   omit_external_ip = true
   enable_secure_boot = true
-  source_image_name  = local.source_image_family
+  #source_image_name  = local.source_image_family
+  source_image = local.source_image
   image_family = local.image_family
   zone = var.zone
   disk_size = var.disk_size
