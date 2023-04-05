@@ -39,8 +39,8 @@ locals {
 
 source "googlecompute" "packer-image" {
   project_id  = var.project_id
-  use_internal_ip = true
-  omit_external_ip = true
+  #use_internal_ip = true
+  #omit_external_ip = true
   enable_secure_boot = true
   #source_image_name  = local.source_image_family
   source_image = local.source_image
