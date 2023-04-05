@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh "cd /var/lib/jenkins/workspace/packer-gcp/${params.provider}/${params.resource}/${params.environment}/${params.region}/${params.repo_name} && packer build"
+                sh "cd /var/lib/jenkins/workspace/packer-gcp/${params.provider}/${params.resource}/${params.environment}/${params.region}/${params.repo_name} && packer build config.pkr.hcl"
             }
         }
 
